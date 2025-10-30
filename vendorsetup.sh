@@ -20,10 +20,6 @@ echo "Cloning hardware xiaomi source..."
 rm -rf hardware/xiaomi
 git clone -b lineage-23.0 https://github.com/droidcore/hardware_xiaomi.git hardware/xiaomi
 
-# Dolby
-rm -rf packages/apps/XiaomiDolby
-git clone -b lineage-23.0 https://github.com/lightbulb-box/android_packages_apps_XiaomiDolby packages/apps/XiaomiDolby
-
 # MiuiCamera device tree (fresh clone)
 echo "Cloning MiuiCamera device tree..."
 rm -rf device/xiaomi/peridot-miuicamera
