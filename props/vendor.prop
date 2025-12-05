@@ -41,6 +41,9 @@ vendor.audio_hal.period_size=192
 vendor.qc2audio.per_frame.flac.dec.enabled=true
 vendor.qc2audio.suspend.enabled=true
 
+# Adaptive Suspend
+suspend.short_suspend_threshold_millis=5000
+
 # Bluetooth
 bluetooth.profile.a2dp.source.enabled=true
 bluetooth.profile.asha.central.enabled=true
@@ -81,6 +84,12 @@ ro.bluetooth.a2dp_offload.supported=true
 camera.disable_zsl_mode=true
 ro.camera.enableCamera1MaxZsl=1
 
+# Dalvik
+dalvik.vm.dex2oat-cpu-set=4,5,6,7
+dalvik.vm.dex2oat-threads=4
+dalvik.vm.image-dex2oat-cpu-set=4,5,6,7
+dalvik.vm.image-dex2oat-threads=4
+
 # DPM
 persist.vendor.dpm.vndr.feature=1
 persist.vendor.dpm.vndr.halservice.enable=1
@@ -103,7 +112,10 @@ persist.backup.ntpServer=0.pool.ntp.org
 # Graphics
 debug.angle.feature_overrides_enabled=preferLinearFilterForYUV:mapUnspecifiedColorSpaceToPassThrough
 debug.egl.hw=0
+debug.renderengine.backend=skiavkthreaded
 debug.sf.auto_latch_unsignaled=0
+debug.hwui.skia_tracing_enabled=false
+debug.hwui.skia_use_perfetto_track_events=false
 debug.sf.disable_client_composition_cache=0
 debug.sf.early.app.duration=16600000
 debug.sf.early.sf.duration=16600000
@@ -117,6 +129,8 @@ debug.sf.late.app.duration=16600000
 debug.sf.late.sf.duration=10500000
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
+debug.sf.region_sampling_timer_timeout_ns=200000000
+debug.sf.region_sampling_period_ns=200000000
 debug.sf.use_phase_offsets_as_durations=1
 graphics.gpu.profiler.support=true
 persist.sys.sf.color_mode=0
@@ -148,6 +162,7 @@ ro.surface_flinger.uclamp.min=30
 vendor.display.comp_mask=0
 vendor.display.use_layer_ext=0
 vendor.display.use_smooth_motion=0
+vendor.display.disable_system_load_check=1
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
 vendor.display.disable_get_screen_decorator_support=1
@@ -167,8 +182,10 @@ vendor.display.reserved_writeback_config=1
 vendor.display.scaling_dest_opt_mode=4
 vendor.display.scaling_source_opt_mode=4
 vendor.display.vds_allow_hwc=1
+vendor.display.override_doze_mode=1
 vendor.gralloc.disable_ubwc=0
 vendor.gralloc.enable_logs=0
+ro.config.avoid_gfx_accel=true
 ro.surface_flinger.support_kernel_idle_timer=true
 
 # IMS
@@ -250,6 +267,11 @@ ro.config.media_vol_default=10
 ro.config.media_vol_steps=15
 ro.config.system_vol_steps=15
 ro.config.vc_call_vol_steps=11
+
+# Video Calling
+persist.vendor.radio.report_codec=1
+persist.vendor.radio.vdp_on_ims_cap=1
+persist.vendor.qti.telephony.vt_cam_interface=1
 
 # WLAN
 wifi.aware.interface=wifi-aware0
