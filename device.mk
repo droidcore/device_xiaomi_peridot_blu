@@ -222,6 +222,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
 
+# GameBar Performance Overlay
+$(call inherit-product, packages/apps/GameBar/gamebar.mk) 
 
 # HIDL
 PRODUCT_PACKAGES += \
