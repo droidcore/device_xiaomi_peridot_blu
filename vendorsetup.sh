@@ -30,6 +30,8 @@ echo "Cloning MiuiCamera vendor tree..."
 rm -rf vendor/xiaomi/peridot-miuicamera
 git clone https://github.com/sm8635-dev/vendor_xiaomi_peridot-miuicamera.git vendor/xiaomi/peridot-miuicamera
 
+rm -rf packages/apps/XiaomiDolby
+
 # Viper4Android 
 echo "Cloning Viper4Android tree..."
 rm -rf packages/apps/ViPER4AndroidFX
