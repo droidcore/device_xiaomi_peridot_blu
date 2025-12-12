@@ -45,12 +45,15 @@ echo "Cloning Gamebar tree..."
 rm -rf packages/apps/GameBar
 git clone https://github.com/droidcore/packages_apps_GameBar.git packages/apps/GameBar
 
-# Picking sepolicy for QPR1 (cherry pick)
-echo "Picking sepolicy fix..."
-cd device/qcom/sepolicy_vndr/sm8650
-git fetch https://github.com/droidcore/device_qcom_sepolicy_vndr qpr1
-git reset --hard FETCH_HEAD
-croot 
+# Packages Apps Settings
+echo "Cloning Custom Apps Settings tree..."
+rm -rf packages/apps/Settings
+git clone https://github.com/droidcore/packages_apps_Settings.git packages/apps/Settings
+
+# system sepolicy 
+echo "Cloning Custom system sepolicy tree..."
+rm -rf system/sepolicy
+git clone https://github.com/droidcore/system_sepolicy.git system/sepolicy
 
 # Refresh signing keys
 if [ -d vendor/lineage-priv/keys ]; then
