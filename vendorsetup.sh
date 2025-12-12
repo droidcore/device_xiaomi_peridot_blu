@@ -68,12 +68,12 @@ git reset --hard FETCH_HEAD
 croot 
 
 # Refresh signing keys
-if [ -d vendor/evolution-priv/keys ]; then
+if [ -d vendor/lineage-priv/keys ]; then
   echo "Removing existing signing keys..."
-  rm -rf vendor/evolution-priv/keys
+  rm -rf vendor/lineage-priv/keys
 fi
 echo "Cloning fresh signing keys..."
-git clone https://github.com/droidcore/private_key.git -b main vendor/evolution-priv/keys
+git clone https://github.com/droidcore/private_key.git -b main vendor/lineage-priv/keys
 
 # Always back to root at the end
 if command -v croot &>/dev/null; then
